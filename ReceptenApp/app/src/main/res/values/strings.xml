@@ -3,4 +3,7 @@
     <string name="header">Receptenboek</string>
     <string name="zoekRecept">Zoek zelf een recept!</string>
     <string name="suggestie">Wat dacht je van dit recept?</string>
+
+    <string name="receptNaam">Naam recept</string>
+    <string name="receptIngredienten">Ingredienten recept:</string>
 </resources>
