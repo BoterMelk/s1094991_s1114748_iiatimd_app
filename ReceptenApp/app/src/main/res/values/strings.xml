@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ReceptenApp</string>
+    <string name="header">Receptenboek</string>
+    <string name="zoekRecept">Zoek zelf een recept!</string>
+    <string name="suggestie">Wat dacht je van dit recept?</string>
 </resources>
