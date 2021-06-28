@@ -10,6 +10,7 @@ import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.net.CookieHandler;
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements ReceptAdapter.Rec
     private RecyclerView.LayoutManager layoutManager;
     private Recept[] recepten;
     private ReceptAdapter.RecyclerViewClickListener listener;
+    private ImageButton loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +35,8 @@ public class MainActivity extends AppCompatActivity implements ReceptAdapter.Rec
         setReceptArray();
         setAdapter();
 
-        Button loginButton;
-        loginButton = (Button) findViewById(R.id.loginButton);
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openNewActivity();
-            }
-        });
+        loginButton = findViewById(R.id.loginButton);
+        loginButton.setOnClickListener(v -> openNewActivity());
     }
 
     public void openNewActivity(){
@@ -68,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements ReceptAdapter.Rec
     @Override
     public void onClick(int position) {
 
-        Log.d("","clicked");
         recepten[position].getNaam();
         Intent intent = new Intent(this, ReceptActivity.class);
         intent.putExtra("naam", "Test");
