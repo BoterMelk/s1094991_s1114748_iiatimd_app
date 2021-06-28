@@ -6,15 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-
-import java.net.CookieHandler;
-
-import static androidx.core.content.ContextCompat.startActivity;
 
 public class MainActivity extends AppCompatActivity implements ReceptAdapter.RecyclerViewClickListener{
 
@@ -35,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements ReceptAdapter.Rec
         setReceptArray();
         setAdapter();
 
-        loginButton = findViewById(R.id.loginButton);
+        loginButton = findViewById(R.id.profileActivityButton);
         loginButton.setOnClickListener(v -> openNewActivity());
     }
 
@@ -53,12 +45,17 @@ public class MainActivity extends AppCompatActivity implements ReceptAdapter.Rec
     }
 
     private void setReceptArray() {
-        recepten = new Recept[5];
+        recepten = new Recept[10];
         recepten[0] = new Recept("Lasagne","Lasagne beschrijving", 1);
         recepten[1] = new Recept("Lasagne","Lasagne beschrijving", 2);
         recepten[2] = new Recept("Lasagne","Lasagne beschrijving", 3);
         recepten[3] = new Recept("Lasagne","Lasagne beschrijving", 4);
         recepten[4] = new Recept("Lasagne","Lasagne beschrijving", 5);
+        recepten[5] = new Recept("Lasagne","Lasagne beschrijving", 6);
+        recepten[6] = new Recept("Lasagne","Lasagne beschrijving 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1", 7);
+        recepten[7] = new Recept("Lasagne","Lasagne beschrijving", 8);
+        recepten[8] = new Recept("Lasagne","Lasagne beschrijving", 9);
+        recepten[9] = new Recept("Lasagne","Lasagne beschrijving nummer 10, vraag niet waarom alles lasagne is, want dat weet ik zelf ook niet.", 10);
     }
 
     @Override

@@ -10,4 +10,6 @@
 
     <color name="primary">#da4a5e</color>
     <color name="background">#F8E1E4</color>
+
+    <color name="darktext">#2C2C2C</color>
 </resources>

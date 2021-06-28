@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <View
@@ -40,6 +40,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/zoekRecept"
+        android:textColor="@color/darktext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +52,7 @@
         android:layout_height="25dp"
         android:text="@string/suggestie"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/darktext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
@@ -59,14 +61,15 @@
         android:id="@+id/recyclerView"
         android:layout_width="400dp"
         android:layout_height="565dp"
-        android:layout_marginTop="9dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="100dp"
+        android:clipToPadding="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ImageButton
-        android:id="@+id/loginButton"
+        android:id="@+id/profileActivityButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -81,7 +84,7 @@
         app:srcCompat="@drawable/profile_white" />
 
     <ImageButton
-        android:id="@+id/favorietenButton"
+        android:id="@+id/favorietenActivityButton"
         android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -90,7 +93,7 @@
         android:layout_marginBottom="74dp"
         android:background="@color/primary"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
-        app:layout_constraintEnd_toStartOf="@+id/loginButton"
+        app:layout_constraintEnd_toStartOf="@+id/profileActivityButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/heart_white" />
