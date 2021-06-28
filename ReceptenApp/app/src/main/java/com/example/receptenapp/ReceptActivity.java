@@ -10,7 +10,7 @@ public class ReceptActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.recept_info);
+        setContentView(R.layout.activity_receptinfo);
         TextView receptNaam = findViewById(R.id.receptInfoNaam);
 
 //        String naam = "Geen";

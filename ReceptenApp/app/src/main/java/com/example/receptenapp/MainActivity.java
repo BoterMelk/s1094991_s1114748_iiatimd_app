@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import java.net.CookieHandler;
 
@@ -32,6 +33,19 @@ public class MainActivity extends AppCompatActivity implements ReceptAdapter.Rec
         setReceptArray();
         setAdapter();
 
+        Button loginButton;
+        loginButton = (Button) findViewById(R.id.loginButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNewActivity();
+            }
+        });
+    }
+
+    public void openNewActivity(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
     private void setAdapter() {
@@ -57,7 +71,8 @@ public class MainActivity extends AppCompatActivity implements ReceptAdapter.Rec
         Log.d("","clicked");
         recepten[position].getNaam();
         Intent intent = new Intent(this, ReceptActivity.class);
-        intent.putExtra("naam", recepten[position].getNaam());
+        intent.putExtra("naam", "Test");
         startActivity(intent);
+//        recepten[position].getNaam()
     }
 }
