@@ -64,9 +64,20 @@ public class MainActivity extends AppCompatActivity implements ReceptAdapter.Rec
 
     @Override
     public void onClick(int position) {
-        String naamDing = recepten[position].getNaam();
         Intent intent = new Intent(this, ReceptInfoActivity.class);
-        intent.putExtra("naam", naamDing);
+        intent.putExtra("naam", recepten[position].getNaam());
+        intent.putExtra("beschrijving", recepten[position].getBeschrijving());
         startActivity(intent);
     }
 }
+
+//    Als gebruiker wil ik een recept aan kunnen klikken om deze in detail te kunnen bekijken
+
+
+//    Als gebruiker wil ik elke keer als de app opent, een nieuw recept kunnen zien
+//    Als gebruiker wil ik kunnen inloggen
+//    Als gebruiker wil ik een account kunnen aanmaken
+//    Als gebruiker wil ik kunnen uitloggen
+//    Als gebruiker wil ik getoonde recepten kunnen opslaan wanneer ik ben ingelogd
+//    Als gebruiker wil ik mijn opgeslagen recepten kunnen bekijken wanneer ik ben ingelogd
+//    Als gebruiker wil ik recepten kunnen zoeken door zoekwoorden in te typen in een zoekbalk
