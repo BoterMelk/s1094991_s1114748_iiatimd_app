@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements ReceptAdapter.Rec
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.hasFixedSize();
-        recyclerViewAdapter = new ReceptAdapter(recepten, listener);
+        recyclerViewAdapter = new ReceptAdapter(recepten, this);
         recyclerView.setAdapter(recyclerViewAdapter);
     }
 
@@ -60,11 +60,9 @@ public class MainActivity extends AppCompatActivity implements ReceptAdapter.Rec
 
     @Override
     public void onClick(int position) {
-
-        recepten[position].getNaam();
+        String naamDing = recepten[position].getNaam();
         Intent intent = new Intent(this, ReceptActivity.class);
-        intent.putExtra("naam", "Test");
+        intent.putExtra("naam", naamDing);
         startActivity(intent);
-//        recepten[position].getNaam()
     }
 }

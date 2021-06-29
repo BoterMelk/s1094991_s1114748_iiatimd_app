@@ -14,32 +14,12 @@ import static androidx.core.content.ContextCompat.startActivity;
 
 public class ReceptAdapter extends RecyclerView.Adapter<ReceptAdapter.ReceptViewHolder>{
 
-    private Recept[] recept;
+    private Recept[] recepten;
     private RecyclerViewClickListener listener;
 
-    public ReceptAdapter(Recept[] recept, RecyclerViewClickListener listener) {
-        this.recept = recept;
+    public ReceptAdapter(Recept[] recepten, RecyclerViewClickListener listener) {
+        this.recepten = recepten;
         this.listener = listener;
-    }
-
-    public class ReceptViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView receptNaam;
-        public TextView receptBeschrijving;
-        RecyclerViewClickListener recyclerViewClickListener;
-
-        public ReceptViewHolder(View v, RecyclerViewClickListener recyclerViewClickListener) {
-            super(v);
-            receptNaam = v.findViewById(R.id.receptNaam);
-            receptBeschrijving = v.findViewById(R.id.receptBeschrijving);
-            this.recyclerViewClickListener = recyclerViewClickListener;
-
-            itemView.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View v) {
-            recyclerViewClickListener.onClick(getAdapterPosition());
-        }
     }
 
     @NonNull
@@ -52,13 +32,33 @@ public class ReceptAdapter extends RecyclerView.Adapter<ReceptAdapter.ReceptView
 
     @Override
     public void onBindViewHolder(@NonNull ReceptViewHolder holder, int position) {
-        holder.receptNaam.setText(recept[position].getNaam());
-        holder.receptBeschrijving.setText(recept[position].getBeschrijving());
+        holder.receptNaam.setText(recepten[position].getNaam());
+        holder.receptBeschrijving.setText(recepten[position].getBeschrijving());
     }
 
     @Override
     public int getItemCount() {
-        return recept.length;
+        return recepten.length;
+    }
+
+    public class ReceptViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        public TextView receptNaam;
+        public TextView receptBeschrijving;
+        RecyclerViewClickListener recyclerViewClickListener;
+
+        public ReceptViewHolder(@NonNull View v, RecyclerViewClickListener recyclerViewClickListener) {
+            super(v);
+            receptNaam = v.findViewById(R.id.receptNaam);
+            receptBeschrijving = v.findViewById(R.id.receptBeschrijving);
+            this.recyclerViewClickListener = recyclerViewClickListener;
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            recyclerViewClickListener.onClick(getAdapterPosition());
+        }
     }
 
     public interface RecyclerViewClickListener {
