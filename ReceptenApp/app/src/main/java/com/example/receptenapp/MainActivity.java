@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements ReceptAdapter.Rec
     private Recept[] recepten;
     private ReceptAdapter.RecyclerViewClickListener listener;
     private ImageButton loginButton;
+    private ImageButton favorietenButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements ReceptAdapter.Rec
 
         loginButton = findViewById(R.id.profileActivityButton);
         loginButton.setOnClickListener(v -> openNewActivity());
+
+        favorietenButton = findViewById(R.id.favorietenActivityButton);
+        favorietenButton.setOnClickListener(v -> openNewActivity());
     }
 
     public void openNewActivity(){
@@ -46,22 +50,22 @@ public class MainActivity extends AppCompatActivity implements ReceptAdapter.Rec
 
     private void setReceptArray() {
         recepten = new Recept[10];
-        recepten[0] = new Recept("Lasagne","Lasagne beschrijving", 1);
-        recepten[1] = new Recept("Lasagne","Lasagne beschrijving", 2);
-        recepten[2] = new Recept("Lasagne","Lasagne beschrijving", 3);
-        recepten[3] = new Recept("Lasagne","Lasagne beschrijving", 4);
-        recepten[4] = new Recept("Lasagne","Lasagne beschrijving", 5);
-        recepten[5] = new Recept("Lasagne","Lasagne beschrijving", 6);
-        recepten[6] = new Recept("Lasagne","Lasagne beschrijving 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1", 7);
-        recepten[7] = new Recept("Lasagne","Lasagne beschrijving", 8);
-        recepten[8] = new Recept("Lasagne","Lasagne beschrijving", 9);
-        recepten[9] = new Recept("Lasagne","Lasagne beschrijving nummer 10, vraag niet waarom alles lasagne is, want dat weet ik zelf ook niet.", 10);
+        recepten[0] = new Recept("Lasagne","Lasagne beschrijving", "-tomaat, -iets anders, -gehakt", 1);
+        recepten[1] = new Recept("Lasagne","Lasagne beschrijving", "-tomaat, -iets anders, -gehakt", 2);
+        recepten[2] = new Recept("Lasagne","Lasagne beschrijving", "-tomaat, -iets anders, -gehakt", 3);
+        recepten[3] = new Recept("Lasagne","Lasagne beschrijving", "-tomaat, -iets anders, -gehakt", 4);
+        recepten[4] = new Recept("Lasagne","Lasagne beschrijving", "-tomaat, -iets anders, -gehakt", 5);
+        recepten[5] = new Recept("Lasagne","Lasagne beschrijving", "-tomaat, -iets anders, -gehakt", 6);
+        recepten[6] = new Recept("Lasagne","Lasagne beschrijving 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1", "-tomaat, -iets anders, -gehakt", 7);
+        recepten[7] = new Recept("Lasagne","Lasagne beschrijving", "-tomaat, -iets anders, -gehakt", 8);
+        recepten[8] = new Recept("Lasagne","Lasagne beschrijving", "-tomaat, -iets anders, -gehakt", 9);
+        recepten[9] = new Recept("Lasagne","Lasagne beschrijving nummer 10, vraag niet waarom alles lasagne is, want dat weet ik zelf ook niet.", "-tomaat, -iets anders, -gehakt", 10);
     }
 
     @Override
     public void onClick(int position) {
         String naamDing = recepten[position].getNaam();
-        Intent intent = new Intent(this, ReceptActivity.class);
+        Intent intent = new Intent(this, ReceptInfoActivity.class);
         intent.putExtra("naam", naamDing);
         startActivity(intent);
     }

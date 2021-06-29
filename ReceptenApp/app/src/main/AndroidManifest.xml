@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReceptActivity"/>
+        <activity android:name=".ReceptInfoActivity"/>
         <activity android:name=".LoginActivity" />
     </application>
 
