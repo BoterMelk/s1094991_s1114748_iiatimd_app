@@ -10,13 +10,12 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.ToggleButton;
 
-public class MainActivity extends AppCompatActivity implements ReceptAdapter.RecyclerViewClickListener{
+public class MainActivity extends AppCompatActivity implements ReceptAdapter.RecyclerViewClickListener {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter recyclerViewAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private Recept[] recepten;
-    private ReceptAdapter.RecyclerViewClickListener listener;
     private ImageButton loginButton;
     private ImageButton favorietenButton;
 

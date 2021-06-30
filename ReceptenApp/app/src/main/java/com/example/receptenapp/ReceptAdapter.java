@@ -47,6 +47,16 @@ public class ReceptAdapter extends RecyclerView.Adapter<ReceptAdapter.ReceptView
         } else {
             holder.receptFavorietButton.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.heart_black));
         }
+
+        holder.receptFavorietButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                holder.receptFavorietButton.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.heart_black));
+                recepten[position].setFavoriet(true);
+            }else {
+                holder.receptFavorietButton.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.heart_white));
+                recepten[position].setFavoriet(false);
+            }
+        });
     }
 
     @Override

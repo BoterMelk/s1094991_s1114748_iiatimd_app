@@ -31,10 +31,18 @@ public class ReceptInfoActivity extends AppCompatActivity {
         activitySetup();
 
         receptInfoFavorietButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked)
+            if (isChecked) {
                 receptInfoFavorietButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.heart_black));
-            else
+//                recepten[position].setFavoriet(true);
+
+//                krijg op een of andere manier de huidige positie in de array
+//                geen idee hoe though
+//                hmmmmm
+//                ik ga morgen verder hiermee
+            } else {
                 receptInfoFavorietButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.heart_white));
+//                recepten[position].setFavoriet(false);
+            }
         });
 
         receptInfoBackButton.setOnClickListener(v -> finish());
