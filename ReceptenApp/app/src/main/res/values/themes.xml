@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.ReceptenApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.ReceptenApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -12,5 +12,26 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ETRegistrationForm">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:background">@drawable/edittext_round</item>
+        <item name="android:drawablePadding">@dimen/fab_margin</item>
+        <item name="android:paddingLeft">@dimen/fab_margin</item>
+        <item name="android:paddingRight">@dimen/fab_margin</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:layout_marginTop">@dimen/fab_margin_half</item>
+
+    </style>
+    <style name="validationMsg">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:textSize">@dimen/heading_x_small</item>
+        <item name="android:textColor">@color/color_error</item>
+        <item name="android:gravity">right</item>
+
     </style>
 </resources>
