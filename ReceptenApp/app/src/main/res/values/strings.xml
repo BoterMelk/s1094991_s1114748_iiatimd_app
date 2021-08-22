@@ -9,6 +9,7 @@
 
     <string name="loginTitel">Jouw Receptenboek</string>
     <string name="loginLogin">Log in</string>
+    <string name="register">Register</string>
     <string name="loginOf">of</string>
     <string name="loginRegister">Maak een account aan.</string>
 </resources>

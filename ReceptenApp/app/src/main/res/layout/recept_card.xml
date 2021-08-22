@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="300dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="50dp"
+    android:layout_marginStart="10dp"
     android:layout_marginLeft="10dp"
     android:layout_marginTop="10dp"
-    android:layout_marginEnd="50dp"
+
+    android:layout_marginEnd="12dp"
+    android:clickable="true"
     android:topLeftRadius="4dp"
     android:topRightRadius="4dp"
-    android:background="@drawable/container_white"
     app:cardBackgroundColor="@color/white"
-    android:clickable="true">
+    android:layout_marginRight="12dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -22,52 +22,64 @@
             android:id="@+id/receptFavorietButton"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginEnd="4dp"
             android:layout_marginRight="4dp"
             android:layout_marginBottom="4dp"
             android:textOff=""
             android:textOn=""
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:visibility="invisible" />
 
         <TextView
+            android:layout_marginStart="5dp"
             android:id="@+id/receptNaam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/imageView"
+            android:maxLines="1"
+            android:layout_marginTop="6dp"
             android:text="TextView"
-            android:maxWidth="180dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/darktext"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_marginLeft="5dp" />
+
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+           android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/lasagne"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:src="@drawable/lasagne" />
 
         <TextView
+            android:layout_marginStart="5dp"
             android:id="@+id/receptBeschrijving"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="8dp"
-            android:maxWidth="180dp"
+            android:layout_below="@+id/receptNaam"
+            android:layout_toStartOf="@+id/receptFavorietButton"
+            android:layout_toLeftOf="@+id/receptFavorietButton"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_toRightOf="@+id/imageView"
+            android:maxLines="4"
             android:paddingBottom="8dp"
-            android:text="TextView"
+            android:text="Xggffffffffffffffffffffffffffffffffffffffffffffffffffffgg"
             android:textColor="@color/darktext"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/receptNaam" />
+            android:textSize="16sp"
+            android:layout_marginLeft="5dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
@@ -25,11 +24,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="9dp"
         android:background="@color/primary"
-        android:text="@string/loginLogin"
+        android:text="@string/register"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword_confirm" />
+
+    <EditText
+        android:id="@+id/editTextTextName"
+        style="@style/ETRegistrationForm"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="Naam"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginTitel" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
@@ -41,7 +52,7 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginTitel" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextName" />
 
     <TextView
         android:id="@+id/tv_validation_login_msg_email"
@@ -62,6 +73,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
+    <EditText
+        android:id="@+id/editTextTextPassword_confirm"
+        style="@style/ETRegistrationForm"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="Herhaal wachtwoord"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
     <TextView
         android:id="@+id/tv_validation_login_msg_password"
         style="@style/validationMsg"
@@ -75,22 +98,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="@string/loginOf"
+        android:visibility="gone"
         android:textColor="@color/darktext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileActivityButton" />
 
-    <Button
-        android:id="@+id/registerButton"
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/registerButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="84dp"
-        android:text="Maak account aan"
-        app:backgroundTint="@color/primary"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"
+        android:text="@string/loginRegister"
+        android:textColor="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileActivityButton"
-        app:layout_constraintVertical_bias="0.139" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

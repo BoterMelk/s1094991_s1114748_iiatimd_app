@@ -1,8 +1,6 @@
 package com.example.receptenapp;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -25,46 +22,48 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LoginActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
-    EditText editTextTextPassword, editTextTextEmailAddress;
+    EditText editTextTextName, editTextTextPassword, editTextTextPassword_confirm, editTextTextEmailAddress;
     Button profileActivityButton;
-    private Button registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
 
+        editTextTextName = findViewById(R.id.editTextTextName);
         editTextTextPassword = findViewById(R.id.editTextTextPassword);
+        editTextTextPassword_confirm = findViewById(R.id.editTextTextPassword_confirm);
         editTextTextEmailAddress = findViewById(R.id.editTextTextEmailAddress);
         profileActivityButton = findViewById(R.id.profileActivityButton);
 
         profileActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String password = editTextTextPassword.getText().toString().trim();
+                String name = editTextTextName.getText().toString().trim();
                 String email = editTextTextEmailAddress.getText().toString().trim();
+                String password = editTextTextPassword.getText().toString().trim();
+                String password_confirm = editTextTextPassword_confirm.getText().toString().trim();
 
-                if (email.trim().length() > 0 && password.trim().length() > 0) {
-                    loginWithEmail(email, password);
+                if (name.trim().length() > 0 && password.trim().length() > 0 && email.trim().length() > 0 && password_confirm.trim().length() > 0) {
+                    if (password.equals(password_confirm)) {
+                        registerWithEmail(name, email, password);
+
+                    } else {
+                        Toast.makeText(RegisterActivity.this, "Confirm password must match with password", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
-                    Toast.makeText(LoginActivity.this, "please enter email/pass", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "please enter name/email/pass", Toast.LENGTH_SHORT).show();
 
                 }
 
             }
         });
-
-        registerButton = findViewById(R.id.registerButton);
-        registerButton.setOnClickListener(v -> {
-            Intent registerIntent = new Intent(this, RegisterActivity.class);
-            startActivity(registerIntent);
-        });
     }
 
-    private void loginWithEmail(final String email, final String password) {
-        String JSON_URL = "http://10.0.2.2:8000/api/login";
+    private void registerWithEmail(String name, final String email, final String password) {
+        String JSON_URL = "http://10.0.2.2:8000/api/register/";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, JSON_URL, new Response.Listener<String>() {
@@ -83,6 +82,9 @@ public class LoginActivity extends AppCompatActivity {
                 Map<String, String> params = new HashMap<>();
                 params.put("email", email);
                 params.put("password", password);
+                params.put("password_confirmation", password);
+                params.put("name", name);
+
                 return params;
             }
         };
@@ -100,8 +102,8 @@ public class LoginActivity extends AppCompatActivity {
         } catch (Exception e) {
         }
 
-        UtitlityClass.setLoginId(LoginActivity.this, email);
-        UtitlityClass.setToken(LoginActivity.this, token);
+        UtitlityClass.setLoginId(RegisterActivity.this, email);
+        UtitlityClass.setToken(RegisterActivity.this, token);
 
         Intent mainIntent = new Intent(this, MainActivity.class);
         startActivity(mainIntent);
